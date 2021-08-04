@@ -26,7 +26,7 @@ jobs:
         run: cp iTrust2/src/main/resources/application.yml.template iTrust2/src/main/resources/application.yml
         
         
-      - name: Shutdown Ubuntu MySQL (SUDO)
+      - name: Shutdown Ubuntu MySQL
         run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
 
       - name: Set up MySQL
