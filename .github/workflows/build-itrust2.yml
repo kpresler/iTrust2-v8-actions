@@ -35,7 +35,7 @@ jobs:
           mysql root password: root1234
           
       - name: Check DB
-        run: mysql -uroot -proot1234 -e 'SELECT version()'
+        run: mysql -uroot -h 127.0.0.1 -proot1234 -e 'SELECT version()'
       
 
       - name: Build with Maven
