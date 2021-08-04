@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://db:3306/iTrust2_test?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://0.0.0.0:3306/iTrust2_test?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
     password: root1234
     hikari:
