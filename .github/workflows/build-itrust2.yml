@@ -33,7 +33,7 @@ jobs:
         run: docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=root1234 -p 3306:3306 -d docker.io/library/mariadb:10.4
           
       - name: Check DB
-        run: mysql -uroot -h mariadbtest -proot1234 -e 'SELECT version()'
+        run: mysql -uroot -h 0.0.0.0 -proot1234 -e 'SELECT version()'
       
 
       - name: Build with Maven
