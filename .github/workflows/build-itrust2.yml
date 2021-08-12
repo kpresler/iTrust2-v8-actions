@@ -22,7 +22,7 @@ jobs:
         run: cp iTrust2/src/main/resources/application.yml.template iTrust2/src/main/resources/application.yml
         
       - name: Edit config file with DB credentials
-        run: sed -i 's/localhost/mariadbtest/g' iTrust2/src/main/resources/application.yml && sed -i 's/password\:/password\:\ root1234/g' iTrust2/src/main/resources/application.yml
+        run: sed -i 's/localhost/0.0.0.0/g' iTrust2/src/main/resources/application.yml && sed -i 's/password\:/password\:\ root1234/g' iTrust2/src/main/resources/application.yml
           
       - name: Clean up Docker containers
         run: (docker stop $(docker ps -a -q) || true) && (docker rm $(docker ps -a -q) || true)
@@ -34,7 +34,7 @@ jobs:
         run: sleep 15s
          
       - name: Check DB
-        run: mysql -uroot -h mariadbtest -proot1234 -e 'SELECT version()'
+        run: mysql -uroot -h 0.0.0.0 -proot1234 -e 'SELECT version()'
       
 
       - name: Build with Maven
